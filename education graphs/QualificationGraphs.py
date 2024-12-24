@@ -1,2 +1,5 @@
 import pandas as pd
-df = pd.read_csv("Qualifications-of-working-age-NVQ.csv")
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("education graphs/Qualifications-of-working-age-NVQ.csv")
+df.head(5)

@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("/Users/noussaibabaazi/Desktop/FinalProject/education graphs/Qualifications-of-working-age-NVQ.csv")
+data = pd.read_csv("/Users/noussaibabaazi/Desktop/FinalProject/education graphs/QualificatinsDataset.csv")
 
 london_data = data[data['Area'] == 'London']
 other_regions_data = data[data['Area'] != 'London']
@@ -18,3 +18,6 @@ plt.ylabel('Percentage with NVQ4+', fontsize=12)
 plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
 plt.show()
+
+
+

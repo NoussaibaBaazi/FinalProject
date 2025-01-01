@@ -10,9 +10,6 @@ jobs:
           name: Install dependencies
           command: pip install -r requirements.txt
       - run:
-          name: Install dependencies
-          command: pip install pandas matplotlib
-      - run:
           name: Run tests
           command: pytest TestReadData.py
 

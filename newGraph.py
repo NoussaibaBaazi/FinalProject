@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 def read_data():
     """Reads a CSV file and returns a DataFrame."""
-    return pd.read_csv("/Users/noussaibabaazi/Desktop/FinalProject/Qualifications-of-working-age-NVQ_EDITED.csv")
+    return pd.read_csv("QualificationsNVQ.csv")
 
 data = read_data()
 

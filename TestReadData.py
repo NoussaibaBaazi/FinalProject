@@ -3,6 +3,30 @@ import pandas as pd
 import os
 from newGraph import read_data
 
+class TestLibraryImports(unittest.TestCase):
+
+    def test_pandas_import(self):
+        """Check if pandas is imported."""
+        try:
+            import pandas as pd
+        except ImportError:
+            self.fail("pandas is not imported correctly.")
+    
+    def test_numpy_import(self):
+        """Check if numpy is imported."""
+        try:
+            import numpy as np
+        except ImportError:
+            self.fail("numpy is not imported correctly.")
+    
+    def test_matplotlib_import(self):
+        """Check if matplotlib is imported."""
+        try:
+            import matplotlib.pyplot as plt
+        except ImportError:
+            self.fail("matplotlib is not imported correctly.")
+
+
 class TestCSVReading(unittest.TestCase):
 
     def test_csv_file_exists(self):
@@ -26,3 +50,4 @@ class TestCSVReading(unittest.TestCase):
         required_columns = ['Code,Area,Year,% with NVQ4+ - aged 16-64: percent,% with no qualifications - aged 16-64: percent,"% with NVQ2 only - aged 16-64: percent","% with NVQ3 only - aged 16-64: percent']  # Update with your column names
         for col in required_columns:
             self.assertIn(col, df.columns, f"Column '{col}' is missing in the dataset.")
+

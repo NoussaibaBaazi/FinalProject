@@ -47,7 +47,7 @@ class TestCSVReading(unittest.TestCase):
         """Check if specific columns are present in the CSV file."""
         file_path = 'QualificationsNVQ.csv'  # Update with your file path
         df = pd.read_csv(file_path)
-        required_columns = ['Code,Area,Year,% with NVQ4+ - aged 16-64: percent,% with no qualifications - aged 16-64: percent,"% with NVQ2 only - aged 16-64: percent","% with NVQ3 only - aged 16-64: percent']  # Update with your column names
+        required_columns = ['Code','Area','Year','% with NVQ4+ - aged 16-64: percent','% with no qualifications - aged 16-64: percent','% with NVQ2 only - aged 16-64: percent','% with NVQ3 only - aged 16-64: percent']  # Update with your column names
         for col in required_columns:
             self.assertIn(col, df.columns, f"Column '{col}' is missing in the dataset.")
 

@@ -1,8 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("/Users/noussaibabaazi/Desktop/FinalProject/education graphs/Qualifications-of-working-age-NVQ_EDITED.csv")
+def read_data():
+    """Reads a CSV file and returns a DataFrame."""
+    return pd.read_csv("/Users/noussaibabaazi/Desktop/FinalProject/education graphs/Qualifications-of-working-age-NVQ_EDITED.csv")
 
+data = read_data()
 # Filter data for London only
 london_data = data[data['Area'] == 'London']
 
@@ -15,10 +18,10 @@ no_qualifications_percent = london_data['% with no qualifications - aged 16-64: 
 
 # Plot the data
 plt.figure(figsize=(10, 6))
-plt.plot(years, nvq4_percent, color='blue', label='% with NVQ4+')
-plt.plot(years, no_qualifications_percent, color='red', label='% with No Qualifications')
-plt.plot(years, nvq3_percent, color='green', label='% with NVQ3 only Qualifications')
-plt.plot(years, nvq2_percent, color='purple', label='% with NVQ2 only Qualifications')
+plt.plot(years, nvq4_percent, label='% with NVQ4+')
+plt.plot(years, no_qualifications_percent, label='% with No Qualifications')
+plt.plot(years, nvq3_percent, label='% with NVQ3 only Qualifications')
+plt.plot(years, nvq2_percent, label='% with NVQ2 only Qualifications')
 
 # Add labels, title, and legend
 plt.xlabel("Year", fontsize=12)

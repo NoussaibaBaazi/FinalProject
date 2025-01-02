@@ -1,9 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("/Users/noussaibabaazi/Desktop/FinalProject/education graphs/annual-unemployment-region.csv")
+def read_unemployement_data():
+    return pd.read_csv("/Users/noussaibabaazi/Desktop/FinalProject/education graphs/annual-unemployment-region.csv")
 
-london_data = data[data['Location'] == 'London']
+london_data = read_unemployement_data[read_unemployement_data['Location'] == 'London']
 
 years = london_data['Year']
 unemployment_percent = london_data['percent']

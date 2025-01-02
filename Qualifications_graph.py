@@ -1,11 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def read_data():
+def read_qualifications_data():
     """Reads a CSV file and returns a DataFrame."""
     return pd.read_csv("QualificationsNVQ.csv")
 
-data = read_data()
+data = read_qualifications_data()
 
 london_data = data[data['Area'] == 'London']
 

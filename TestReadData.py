@@ -76,3 +76,20 @@ class TestCSVReadingUnemployment(unittest.TestCase):
         for col in required_columns:
             self.assertIn(col, df.columns, f"Column '{col}' is missing in the dataset.")
 
+class TestPercentRangesQualifications(unittest.TestCase):
+    def test_column_value_range(self):
+        """Ensuring the percent column only has perecentages not raw numbers"""
+        file_path = 'QualificationsNVQ.csv'
+        df = pd.read_csv(file_path)
+        percentage_columns = [
+            '% with NVQ4+ - aged 16-64: percent',
+            '% with NVQ2 only - aged 16-64: percent',
+            '% with NVQ3 only - aged 16-64: percent',
+            '% with no qualifications - aged 16-64: percent'
+        ]
+        for column in percentage_columns:
+            with self.subTest(column=column):
+                self.assertTrue(
+                    df[column].between(0, 100).all(),
+                    f"Column '{column}' contains out-of-range values."
+                )

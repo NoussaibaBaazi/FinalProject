@@ -94,7 +94,7 @@ class TestDataFrameNumericColumns(unittest.TestCase):
         self.data = pd.read_csv("workforce-jobs-ons.csv")
 
     def test_columns_are_numeric(self):
-        columns_to_check = ['UK_Male', 'UK_Female', 'London_Male', 'London_Female']
+        columns_to_check = ['Male_UK','Female_UK','Male_London','Female_London']
 
         for column in columns_to_check:
             with self.subTest(column=column):

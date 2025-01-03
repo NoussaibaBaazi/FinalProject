@@ -87,17 +87,18 @@ class TestPercentRangesQualifications(unittest.TestCase):
                     f"Column '{column}' contains out-of-range values."
                 )
 
+
 class TestDataFrameNumericColumns(unittest.TestCase):
     def setUp(self):
+        # Load data as an instance attribute
         self.data = pd.read_csv("workforce-jobs-ons.csv")
 
     def test_columns_are_numeric(self):
-        data = pd.read_csv("workforce-jobs-ons.csv")
-        columns_to_check = ['Male_UK','Female_UK','Male_London','Female_London']
+        columns_to_check = ['UK_Male', 'UK_Female', 'London_Male', 'London_Female']
 
         for column in columns_to_check:
             with self.subTest(column=column):
-                #converting to numeric
+                # Converting to numeric
                 is_numeric = pd.to_numeric(self.data[column], errors='coerce').notna().all()
                 self.assertTrue(is_numeric, f"Column {column} contains non-numeric values.")
 

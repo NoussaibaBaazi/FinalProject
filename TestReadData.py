@@ -1,7 +1,7 @@
 import unittest
 import pandas as pd
 import os
-##from Qualifications_graph import read_qualifications_data
+from worforceGraph import readWorforceCSV
 
 class TestLibraryImports(unittest.TestCase):
 
@@ -87,3 +87,20 @@ class TestPercentRangesQualifications(unittest.TestCase):
                     df[column].between(0, 100).all(),
                     f"Column '{column}' contains out-of-range values."
                 )
+
+import unittest
+import pandas as pd
+
+class TestDataFrameNumericColumns(unittest.TestCase):
+    def test_columns_are_numeric(self):
+        data = readWorforceCSV
+        columns_to_check = ['UK_Male', 'UK_Female', 'London_Male', 'London_Female']
+
+        for column in columns_to_check:
+            with self.subTest(column=column):
+                #converting to numeric
+                is_numeric = pd.to_numeric(self.data[column], errors='coerce').notna().all()
+                self.assertTrue(is_numeric, f"Column {column} contains non-numeric values.")
+
+if __name__ == "__main__":
+    unittest.main()

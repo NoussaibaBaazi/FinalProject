@@ -90,19 +90,18 @@ class TestPercentRangesQualifications(unittest.TestCase):
 
 class TestDataFrameNumericColumns(unittest.TestCase):
     def setUp(self):
-        # Load data as an instance attribute
         self.data = pd.read_csv("workforce-jobs-ons.csv")
 
     def test_columns_are_numeric(self):
         columns_to_check = ['Male_UK','Female_UK','Male_London','Female_London']
         for column in columns_to_check:
             if column in self.data.columns:
-                # Remove commas and convert to numeric
                 self.data[column] = self.data[column].str.replace(",", "").astype(float)
+                
+        self.data.to_csv("cleaned_workforce_jobs.csv", index=False)
 
         for column in columns_to_check:
             with self.subTest(column=column):
-                # Converting to numeric
                 is_numeric = pd.to_numeric(self.data[column], errors='coerce').notna().all()
                 self.assertTrue(is_numeric, f"Column {column} contains non-numeric values.")
 

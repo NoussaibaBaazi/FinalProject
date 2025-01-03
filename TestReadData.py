@@ -88,6 +88,9 @@ class TestPercentRangesQualifications(unittest.TestCase):
                 )
 
 class TestDataFrameNumericColumns(unittest.TestCase):
+    def setUp(self):
+        self.data = pd.read_csv("workforce-jobs-ons.csv")
+
     def test_columns_are_numeric(self):
         data = pd.read_csv("workforce-jobs-ons.csv")
         columns_to_check = ['UK_Male', 'UK_Female', 'London_Male', 'London_Female']

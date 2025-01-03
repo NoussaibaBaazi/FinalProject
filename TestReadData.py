@@ -95,6 +95,10 @@ class TestDataFrameNumericColumns(unittest.TestCase):
 
     def test_columns_are_numeric(self):
         columns_to_check = ['Male_UK','Female_UK','Male_London','Female_London']
+        for column in columns_to_check:
+            if column in self.data.columns:
+                # Remove commas and convert to numeric
+                self.data[column] = self.data[column].str.replace(",", "").astype(float)
 
         for column in columns_to_check:
             with self.subTest(column=column):

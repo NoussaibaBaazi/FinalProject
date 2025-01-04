@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 def read_qualifications_data():
     """Reads a CSV file and returns a DataFrame."""
-    return pd.read_csv("QualificationsNVQ.csv")
+    return pd.read_csv("QualificationsCSV.csv")
 
 data = read_qualifications_data()
 

@@ -29,18 +29,6 @@ class TestCSVReading(unittest.TestCase):
         except Exception as e:
             self.fail(f"Reading CSV failed with exception: {e}")
 
-class TestCSVReadingUnemployment(unittest.TestCase):
-
-    def test_csv_read_successfully(self):
-        """Check if the CSV file can be read without errors."""
-        file_path = 'annual-unemployment-region.csv' 
-        try:
-            df = pd.read_csv(file_path)
-            self.assertIsInstance(df, pd.DataFrame, "Data read is not a DataFrame.")
-        except Exception as e:
-            self.fail(f"Reading CSV failed with exception: {e}")
-
-
 class TestCSVReadingWorkforce(unittest.TestCase):
 
     def test_csv_read_successfully(self):

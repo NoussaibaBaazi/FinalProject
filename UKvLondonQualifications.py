@@ -12,8 +12,8 @@ columns_rename = {
     "% with NVQ4+: percent": "NVQ4+",
     "% with NVQ3 only: percent": "NVQ3 Only",
     "% with NVQ2 only: percent": "NVQ2 Only",
-    "% with NVQ1 only - aged 16-64: percent": "NVQ1 Only",
-    "% with Trade Apprenticeships : percent": "Trade Apprenticeships",
+    "% with NVQ1 only: percent": "NVQ1 Only",
+    "% with Trade Apprenticeships: percent": "Trade Apprenticeships",
     "% with no qualifications: percent": "No Qualifications"
 }
 

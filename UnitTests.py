@@ -1,6 +1,5 @@
 import unittest
 import pandas as pd
-import os
 
 class TestLibraryImports(unittest.TestCase):
 
@@ -21,14 +20,9 @@ class TestLibraryImports(unittest.TestCase):
 
 class TestCSVReading(unittest.TestCase):
 
-    def test_csv_file_exists(self):
-        """Check if the CSV file exists."""
-        file_path = 'QualificationsNVQ.csv' 
-        self.assertTrue(os.path.exists(file_path), "CSV file does not exist.")
-    
     def test_csv_read_successfully(self):
         """Check if the CSV file can be read without errors."""
-        file_path = 'QualificationsNVQ.csv' 
+        file_path = 'QualificationsCSV.csv' 
         try:
             df = pd.read_csv(file_path)
             self.assertIsInstance(df, pd.DataFrame, "Data read is not a DataFrame.")
@@ -72,13 +66,15 @@ class TestCSVReadingWorkforce(unittest.TestCase):
 class TestPercentRangesQualifications(unittest.TestCase):
     def test_column_value_range(self):
         """Ensuring the percent column only has perecentages not raw numbers"""
-        file_path = 'QualificationsNVQ.csv'
+        file_path = 'QualificationsCSV.csv'
         df = pd.read_csv(file_path)
         percentage_columns = [
-            '% with NVQ4+ - aged 16-64: percent',
-            '% with NVQ2 only - aged 16-64: percent',
-            '% with NVQ3 only - aged 16-64: percent',
-            '% with no qualifications - aged 16-64: percent'
+            '% with NVQ4+: percent',
+            '% with NVQ3 only: percent',
+            '% with NVQ2 only: percent',
+            '% with NVQ1 only: percent',
+            '% with Trade Apprenticeships: percent',
+            '% with no qualifications: percent'
         ]
         for column in percentage_columns:
             with self.subTest(column=column):

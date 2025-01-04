@@ -31,11 +31,6 @@ class TestCSVReading(unittest.TestCase):
 
 class TestCSVReadingUnemployment(unittest.TestCase):
 
-    def test_csv_file_exists(self):
-        """Check if the CSV file exists."""
-        file_path = 'annual-unemployment-region.csv' 
-        self.assertTrue(os.path.exists(file_path), "CSV file does not exist.")
-    
     def test_csv_read_successfully(self):
         """Check if the CSV file can be read without errors."""
         file_path = 'annual-unemployment-region.csv' 
@@ -48,11 +43,6 @@ class TestCSVReadingUnemployment(unittest.TestCase):
 
 class TestCSVReadingWorkforce(unittest.TestCase):
 
-    def test_csv_file_exists(self):
-        """Check if the CSV file exists."""
-        file_path = 'workforce-jobs-ons.csv' 
-        self.assertTrue(os.path.exists(file_path), "CSV file does not exist.")
-    
     def test_csv_read_successfully(self):
         """Check if the CSV file can be read without errors."""
         file_path = 'workforce-jobs-ons.csv' 

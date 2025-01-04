@@ -16,12 +16,14 @@ nvq2_percent = london_data['% with NVQ2 only - aged 16-64: percent']
 nvq3_percent = london_data['% with NVQ3 only - aged 16-64: percent']
 no_qualifications_percent = london_data['% with no qualifications - aged 16-64: percent']
 
-
 plt.figure(figsize=(10, 6))
-plt.plot(years, nvq4_percent, label='% with NVQ4+')
-plt.plot(years, no_qualifications_percent, label='% with No Qualifications')
-plt.plot(years, nvq3_percent, label='% with NVQ3 only Qualifications')
-plt.plot(years, nvq2_percent, label='% with NVQ2 only Qualifications')
+
+colors = ['#0072B2', '#D55E00', '#CC79A7', '#009E73']
+
+plt.plot(years, nvq4_percent, label='% with NVQ4+', linewidth=2.5, color=colors[0])
+plt.plot(years, no_qualifications_percent, label='% with No Qualifications', linewidth=2.5, color=colors[1])
+plt.plot(years, nvq3_percent, label='% with NVQ3 only Qualifications', linewidth=2.5, color=colors[2])
+plt.plot(years, nvq2_percent, label='% with NVQ2 only Qualifications', linewidth=2.5, color=colors[3])
 
 
 plt.xlabel("Year", fontsize=12)
@@ -33,5 +35,5 @@ plt.grid(True)
 plt.tight_layout()
 
 plt.grid(visible=True, linestyle='--', alpha=0.7)
-
 plt.show()
+

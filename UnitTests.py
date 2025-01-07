@@ -81,3 +81,29 @@ class TestDataFrameNumericColumns(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestLondonEmploymentAnalysis(unittest.TestCase):
+
+    def setUp(self):
+        self.testing_csv =("cleaned_workforce_jobs.csv")
+        self.data = pd.read_csv(self.testing_csv)
+
+    def test_percentage_change_calculation(self):
+        # Test percentage_change calculations
+        data = self.data.copy()
+        data.columns = ['Date', 'UK_Male', 'UK_Female', 'London_Male', 'London_Female']
+        data['Date'] = pd.to_datetime(data['Date'], format='%b-%Y')
+        data['Year'] = data['Date'].dt.year
+        yearly_data = data.groupby('Year')[['London_Male', 'London_Female']].mean().reset_index()
+        yearly_data['London_Total'] = yearly_data['London_Male'] + yearly_data['London_Female']
+        yearly_data['London_Male_Pct_Change'] = yearly_data['London_Male'].pct_change() * 100
+        yearly_data['London_Female_Pct_Change'] = yearly_data['London_Female'].pct_change() * 100
+        yearly_data['London_Total_Pct_Change'] = yearly_data['London_Total'].pct_change() * 100
+        
+        self.assertTrue('London_Male_Pct_Change' in yearly_data.columns)
+        self.assertTrue('London_Female_Pct_Change' in yearly_data.columns)
+        self.assertTrue('London_Total_Pct_Change' in yearly_data.columns)
+        self.assertAlmostEqual(yearly_data['London_Male_Pct_Change'].iloc[0], 54.3478, places=2)
+        self.assertAlmostEqual(yearly_data['London_Female_Pct_Change'].iloc[0], 45.6522, places=2)
+

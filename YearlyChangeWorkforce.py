@@ -15,8 +15,8 @@ yearly_data = data.groupby('Year')[['London_Male', 'London_Female']].mean().rese
 
 #calculating the percentage change
 yearly_data['London_Total'] = yearly_data['London_Male'] + yearly_data['London_Female']
-yearly_data['London_Male_Pct_Change'] = yearly_data['London_Male']/ yearly_data['London_Total'] * 100
-yearly_data['London_Female_Pct_Change'] = yearly_data['London_Female']/ yearly_data['London_Total'] * 100
+yearly_data['London_Male_Pct_Change'] = yearly_data['London_Male'].pct_change() * 100
+yearly_data['London_Female_Pct_Change'] = yearly_data['London_Female'].pct_change() * 100
 yearly_data['London_Total_Pct_Change'] = yearly_data['London_Total'].pct_change() * 100
 
 yearly_changes = yearly_data.dropna()

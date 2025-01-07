@@ -86,7 +86,7 @@ if __name__ == "__main__":
 class TestLondonEmploymentAnalysis(unittest.TestCase):
 
     def setUp(self):
-        self.testing_csv = "workforce-jobs-ons.csv"
+        self.testing_csv = "cleaned_workforce_jobs.csv"
         self.data = pd.read_csv(self.testing_csv)
 
     def test_percentage_change_calculation(self):

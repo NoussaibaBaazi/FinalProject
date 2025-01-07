@@ -95,7 +95,10 @@ class TestLondonEmploymentAnalysis(unittest.TestCase):
         data.columns = ['Date', 'UK_Male', 'UK_Female', 'London_Male', 'London_Female']
         data['Date'] = pd.to_datetime(data['Date'], format='%b-%Y')
         data['Year'] = data['Date'].dt.year
+        
         yearly_data = data.groupby('Year')[['London_Male', 'London_Female']].mean().reset_index()
+        yearly_changes = yearly_data.dropna()
+        
         yearly_data['London_Total'] = yearly_data['London_Male'] + yearly_data['London_Female']
         yearly_data['London_Male_Pct_Change'] = yearly_data['London_Male'].pct_change() * 100
         yearly_data['London_Female_Pct_Change'] = yearly_data['London_Female'].pct_change() * 100

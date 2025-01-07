@@ -1,13 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Load your data
 data = pd.read_csv("QualificationsCSV.csv")
 
-# Filter for London data only
+#London data only needed for this analysis
 data_london = data[data["Area"] == "London"]
 
-# Rename columns for clarity
 columns_rename = {
     "% with NVQ4+: percent": "NVQ4+",
     "% with NVQ3 only: percent": "NVQ3 Only",
@@ -24,7 +22,7 @@ for col in columns_rename.values():
 
 data_all_qualifications["Year"] = data_all_qualifications["Year"].astype(int)
 
-# Plotting
+
 plt.figure(figsize=(12, 6))
 
 for col, label in columns_rename.items():

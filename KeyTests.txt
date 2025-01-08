@@ -1,0 +1,14 @@
+Test Library imports: Verifies that the python libraris are correctly
+imported for analysis
+
+Test CSV reading: Verifies that the dataset files are correctly read
+into a pandas dataframe without errors
+
+Test percent Ranges: Verifies that the qualificatons percent columns
+are valid percentage values
+
+Test Dataframe Numeric columns: Verifies that the columns are numerical
+and updates into a corrected dataframe
+
+Test London Employmen tAnalysis: Validates the calculation of percentage 
+changes for employment statistics in London.

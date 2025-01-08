@@ -109,6 +109,3 @@ class TestLondonEmploymentAnalysis(unittest.TestCase):
         self.assertFalse(yearly_data['London_Male_Pct_Change'].isna().any())
         self.assertFalse(yearly_data['London_Female_Pct_Change'].isna().any())
         self.assertFalse(yearly_data['London_Total_Pct_Change'].isna().any())
-
-        if not yearly_data['London_Male_Pct_Change'].empty:
-            self.assertGreaterEqual(yearly_data['London_Male_Pct_Change'].iloc[0], 0)

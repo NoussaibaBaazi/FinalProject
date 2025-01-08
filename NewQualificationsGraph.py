@@ -10,8 +10,8 @@ columns_rename = {
     "% with NVQ4+: percent": "NVQ4+",
     "% with NVQ3 only: percent": "NVQ3 Only",
     "% with NVQ2 only: percent": "NVQ2 Only",
-    "% with NVQ1 only - aged 16-64: percent": "NVQ1 Only",
-    "% with Trade Apprenticeships : percent": "Trade Apprenticeships",
+    "% with NVQ1 only: percent": "NVQ1 Only",
+    "% with Trade Apprenticeships: percent": "Trade Apprenticeships percent",
     "% with no qualifications: percent": "No Qualifications"
 }
 
@@ -41,5 +41,7 @@ plt.legend(title="Qualifications", fontsize=12, loc="center left")
 plt.grid(axis='y', linestyle='--', alpha=0.7)  
 plt.tight_layout() 
 plt.ticklabel_format(style='plain', axis='y')
+plt.savefig('/Users/noussaibabaazi/Desktop/FinalProject/LondonQualifications.png', dpi=300, bbox_inches='tight')
 
 plt.show()
+

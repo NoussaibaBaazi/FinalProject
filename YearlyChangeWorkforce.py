@@ -36,10 +36,12 @@ plt.plot(x, yearly_changes['London_Total_Pct_Change'], label='Total % Change', c
 
 plt.title('Yearly Percentage Change in London Employment by Gender', fontsize=18)
 plt.xlabel('Year', fontsize=14)
-plt.ylabel('Year-over-Year % Change', fontsize=14)
+plt.ylabel('% Change', fontsize=14)
 plt.xticks(x, rotation=45)
 plt.axhline(0, color='black', linewidth=0.8, linestyle='--')  
 plt.legend(title="Legend", fontsize=12)
 plt.grid(axis='y', linestyle='--', alpha=0.7) 
 plt.tight_layout()
+plt.savefig('/Users/noussaibabaazi/Desktop/FinalProject/WorkYearlyChange.png', dpi=300, bbox_inches='tight')
 plt.show()
+

@@ -30,4 +30,6 @@ plt.xticks(rotation=45, fontsize=12)
 plt.legend(title="Area", fontsize=12, loc="upper right")
 plt.grid(axis='y', linestyle='--', alpha=0.7)  
 plt.tight_layout() 
+plt.savefig('/Users/noussaibabaazi/Desktop/FinalProject/UKvLondonQualifications.png', dpi=300, bbox_inches='tight')
+
 plt.show()

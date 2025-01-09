@@ -6,6 +6,7 @@ data = pd.read_csv("QualificationsCSV.csv")
 #London data only needed for this analysis
 data_london = data[data["Area"] == "London"]
 
+#renaming columns for better clarity
 columns_rename = {
     "% with NVQ4+: percent": "NVQ4+",
     "% with NVQ3 only: percent": "NVQ3 Only",
@@ -17,12 +18,14 @@ columns_rename = {
 
 data_all_qualifications = data_london.rename(columns=columns_rename)[["Year"] + list(columns_rename.values())]
 
+#converting all values that must be numerical
 for col in columns_rename.values():
     data_all_qualifications[col] = pd.to_numeric(data_all_qualifications[col], errors='coerce')
 
+
 data_all_qualifications["Year"] = data_all_qualifications["Year"].astype(int)
 
-
+#plotting figure
 plt.figure(figsize=(12, 6))
 
 for col, label in columns_rename.items():

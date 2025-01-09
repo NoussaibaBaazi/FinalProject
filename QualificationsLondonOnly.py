@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("QualificationsCSV.csv")
+data = pd.read_csv("Data/QualificationsCSV.csv")
 
 #London data only needed for this analysis
 data_london = data[data["Area"] == "London"]
@@ -44,7 +44,7 @@ plt.legend(title="Qualifications", fontsize=12, loc="center left")
 plt.grid(axis='y', linestyle='--', alpha=0.7)  
 plt.tight_layout() 
 plt.ticklabel_format(style='plain', axis='y')
-plt.savefig('/Users/noussaibabaazi/Desktop/FinalProject/LondonQualifications.png', dpi=300, bbox_inches='tight')
+plt.savefig('/Users/noussaibabaazi/Desktop/FinalProject/Figures/LondonQualifications.png', dpi=300, bbox_inches='tight')
 
 plt.show()
 

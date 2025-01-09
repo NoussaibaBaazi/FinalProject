@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = pd.read_csv('cleaned_workforce_jobs.csv')
+data = pd.read_csv('Data/cleaned_workforce_jobs.csv')
 data.columns = ['Date', 'UK_Male', 'UK_Female', 'London_Male', 'London_Female']
 
 #change date to a datatime format for analysis
@@ -42,6 +42,6 @@ plt.axhline(0, color='black', linewidth=0.8, linestyle='--')
 plt.legend(title="Legend", fontsize=12)
 plt.grid(axis='y', linestyle='--', alpha=0.7) 
 plt.tight_layout()
-plt.savefig('/Users/noussaibabaazi/Desktop/FinalProject/WorkYearlyChange.png', dpi=300, bbox_inches='tight')
+plt.savefig('/Users/noussaibabaazi/Desktop/FinalProject/Figures/WorkYearlyChange.png', dpi=300, bbox_inches='tight')
 plt.show()
 

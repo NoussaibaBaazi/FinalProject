@@ -1,6 +1,6 @@
 import pandas as pd
 
-data = pd.read_csv("cleaned_workforce_jobs.csv")
+data = pd.read_csv("Data/cleaned_workforce_jobs.csv")
 print(data.columns)
 print(data.dtypes)
 

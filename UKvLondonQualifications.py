@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("QualificationsCSV.csv")
+data = pd.read_csv("Data/QualificationsCSV.csv")
 #filtering for both UK and London and only focusing on the latest available year 2021
 data_filtered = data[(data["Area"].isin(["London", "United Kingdom"])) & (data["Year"] == 2021)]
 
@@ -33,6 +33,6 @@ plt.xticks(rotation=45, fontsize=12)
 plt.legend(title="Area", fontsize=12, loc="upper right")
 plt.grid(axis='y', linestyle='--', alpha=0.7)  
 plt.tight_layout() 
-plt.savefig('/Users/noussaibabaazi/Desktop/FinalProject/UKvLondonQualifications.png', dpi=300, bbox_inches='tight')
+plt.savefig('/Users/noussaibabaazi/Desktop/FinalProject/Figures/UKvLondonQualifications.png', dpi=300, bbox_inches='tight')
 
 plt.show()

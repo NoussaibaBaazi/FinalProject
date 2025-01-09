@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("QualificationsCSV.csv")
+data = pd.read_csv("Data/QualificationsCSV.csv")
 
 filtered_data = data[(data['Year'].isin([2013, 2021, 2020,2019])) & (data['Area'] == 'London')]
 nvq4_data = filtered_data[['Year', 'Area', '% with NVQ4+: percent']]

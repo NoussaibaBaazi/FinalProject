@@ -18,11 +18,11 @@ class TestLibraryImports(unittest.TestCase):
             self.fail("matplotlib is not imported correctly.")
 
 
-class TestCSVReading(unittest.TestCase):
+class TestCSVQualifications(unittest.TestCase):
 
     def test_csv_read_successfully(self):
         """Check if the CSV file can be read without errors."""
-        file_path = 'QualificationsCSV.csv' 
+        file_path = 'Data/QualificationsCSV.csv' 
         try:
             df = pd.read_csv(file_path)
             self.assertIsInstance(df, pd.DataFrame, "Data read is not a DataFrame.")
@@ -33,7 +33,7 @@ class TestCSVReadingWorkforce(unittest.TestCase):
 
     def test_csv_read_successfully(self):
         """Check if the CSV file can be read without errors."""
-        file_path = 'workforce-jobs-ons.csv' 
+        file_path = 'Data/workforce-jobs-ons.csv' 
         try:
             df = pd.read_csv(file_path)
             self.assertIsInstance(df, pd.DataFrame, "Data read is not a DataFrame.")
@@ -44,7 +44,7 @@ class TestCSVReadingWorkforce(unittest.TestCase):
 class TestPercentRangesQualifications(unittest.TestCase):
     def test_column_value_range(self):
         """Ensuring the percent column only has perecentages not raw numbers"""
-        file_path = 'QualificationsCSV.csv'
+        file_path = 'Data/QualificationsCSV.csv'
         df = pd.read_csv(file_path)
         percentage_columns = [
             '% with NVQ4+: percent',
@@ -64,7 +64,7 @@ class TestPercentRangesQualifications(unittest.TestCase):
 
 class TestDataFrameNumericColumns(unittest.TestCase):
     def setUp(self):
-        self.data = pd.read_csv("workforce-jobs-ons.csv")
+        self.data = pd.read_csv("Data/workforce-jobs-ons.csv")
 
     def test_columns_are_numeric(self):
         columns_to_check = ['Male_UK','Female_UK','Male_London','Female_London']
@@ -72,7 +72,7 @@ class TestDataFrameNumericColumns(unittest.TestCase):
             if column in self.data.columns:
                 self.data[column] = self.data[column].str.replace(",", "").astype(float)
                 
-        self.data.to_csv("cleaned_workforce_jobs.csv", index=False)
+        self.data.to_csv("Data/cleaned_workforce_jobs.csv", index=False)
 
         for column in columns_to_check:
             with self.subTest(column=column):
@@ -86,7 +86,7 @@ if __name__ == "__main__":
 class TestLondonEmploymentAnalysis(unittest.TestCase):
 
     def setUp(self):
-        self.testing_csv = "cleaned_workforce_jobs.csv"
+        self.testing_csv = "Data/cleaned_workforce_jobs.csv"
         self.data = pd.read_csv(self.testing_csv)
 
     def test_percentage_change_calculation(self):
@@ -104,3 +104,4 @@ class TestLondonEmploymentAnalysis(unittest.TestCase):
         self.assertTrue('London_Male_Pct_Change' in yearly_data.columns)
         self.assertTrue('London_Female_Pct_Change' in yearly_data.columns)
         self.assertTrue('London_Total_Pct_Change' in yearly_data.columns)
+

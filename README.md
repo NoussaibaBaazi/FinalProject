@@ -1,5 +1,6 @@
-##Final Project Repository
-#Employment rates and Higher education in London
+Final Project Repository - NOUSSAIBA BAAZI 230299681
+
+Employment rates and Higher education in London
 
 - Hypothesis: Rising employment rates are closely linked to greater attainment in advanced education.
 The analysis aims to explore the changes in London’s employment and education rates, linking higher education with the job market as well as the pre- and post-pandemic levels in job availability.

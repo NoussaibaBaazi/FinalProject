@@ -9,7 +9,8 @@ The analysis aims to explore the changes in London’s employment and education 
 1. In higher education 54.2% achieved an NVQ4 or higher in 2019, which increased
 to 58.9% in 2021.
 2. In London, the percentage of individuals with NVQ4+ qualifications were 52% in 2021, whereas the UK was 38%.
-
+3. In 2005,  The estimated numebr of employment by males was 2,532,588, and by around 2,135,712 females, this number has
+increase over the years reaching 3,386,804 workforce jobs for males and 3,168,419 for females in Decemeber 2023
 
 - Datasets used - found in: FinalProject(Data):
 Source: https://data.london.gov.uk

@@ -43,5 +43,5 @@ plt.legend(title="Legend", fontsize=12)
 plt.grid(axis='y', linestyle='--', alpha=0.7) 
 plt.tight_layout()
 plt.savefig('/Users/noussaibabaazi/Desktop/FinalProject/Figures/WorkYearlyChange.png', dpi=300, bbox_inches='tight')
-plt.show()
 
+plt.show()

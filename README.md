@@ -5,6 +5,12 @@ Employment rates and Higher education in London
 - Hypothesis: Rising employment rates are closely linked to greater attainment in advanced education.
 The analysis aims to explore the changes in London’s employment and education rates, linking higher education with the job market as well as the pre- and post-pandemic levels in job availability.
 
+- Key Statistics: 
+1. In higher education 54.2% achieved an NVQ4 or higher in 2019, which increased
+to 58.9% in 2021.
+2. In London, the percentage of individuals with NVQ4+ qualifications were 52% in 2021, whereas the UK was 38%.
+3. 
+
 - Datasets used - found in: FinalProject(Data):
 Source: https://data.london.gov.uk
 1. workforce-jobs-ons.csv: contains the estimated numebr of workforce jobs in the UK and London, 

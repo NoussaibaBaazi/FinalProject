@@ -82,9 +82,9 @@ class TestDataFrameNumericColumns(unittest.TestCase):
         for column in columns_to_check:
             if column in self.data.columns:
                 self.data[column] = self.data[column].str.replace(",", "").astype(float)
-                
+         # Save cleaned data to a new CSV file        
         self.data.to_csv("Data/cleaned_workforce_jobs.csv", index=False)
-
+        # Verify all columns contain numeric values
         for column in columns_to_check:
             with self.subTest(column=column):
                 is_numeric = pd.to_numeric(self.data[column], errors='coerce').notna().all()

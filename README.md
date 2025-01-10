@@ -9,7 +9,11 @@ The analysis aims to explore the changes in London’s employment and education 
 1. In higher education 54.2% achieved an NVQ4 or higher in 2019, which increased
 to 58.9% in 2021.
 2. In London, the percentage of individuals with NVQ4+ qualifications were 52% in 2021, whereas the UK was 38%.
+<<<<<<< HEAD
 3. 
+=======
+3.
+>>>>>>> 0bf461401393cda14a58df3aad9a7ff966cc0a20
 
 - Datasets used - found in: FinalProject(Data):
 Source: https://data.london.gov.uk

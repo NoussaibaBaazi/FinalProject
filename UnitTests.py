@@ -116,6 +116,7 @@ class TestLondonEmploymentAnalysis(unittest.TestCase):
         self.assertTrue('London_Female_Pct_Change' in yearly_data.columns)
         self.assertTrue('London_Total_Pct_Change' in yearly_data.columns)
 
+#Unit test class to analyse London Qualifications over time 
 class TestLondonQualificationCorrelation(unittest.TestCase):
 
     def setUp(self):
